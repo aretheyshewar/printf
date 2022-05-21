@@ -7,17 +7,24 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+
 int _putchar(char c);
-int _strlen(char *str);
+void _puts(char *str);
+int _strlen(char *s);
 int _printf(const char *format, ...);
-char *print_char(va_list ap);
-char *print_str(va_list ap);
-char *print_int(va_list ap);
-char *convert_int_to_str(int multiple, int length, int n);
-char *_strcpy(char *dest, char *src);
-char* (*select_func(char c))(va_list);
-char *string_buffer(void);
-void realloc_buffer(char *buffer, int len, va_list ap);
-int buffer_overflow(char *buffer, int pos);
+char *convert_to(char representation[], unsigned int num, int base);
+int function_manager(char c, va_list arg);
+int _switch(char c, va_list arg);
+int print_char(va_list arg);
+int print_sign(va_list arg, int base);
+int print_unsign(va_list arg, int base);
+int print_str(va_list arg);
+int print_ptr(va_list arg);
+int print_rot13(va_list arg);
+int print_rev(va_list arg);
+int print_base16_upper_lower(va_list arg, char *representation);
+int loop_format(va_list arg, const char *str);
+int call_function_manager(char aux, va_list arg);
+int check_percent(int *flag, char aux);
 
 #endif
